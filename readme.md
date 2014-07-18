@@ -1,6 +1,6 @@
 # brick-menu
 
-> A simple [Brick](https://github.com/mozbrick/brick/) vertical menu item.
+> A simple [Brick](https://github.com/mozbrick/brick/) vertical menu.
 
 ## Demo
 
