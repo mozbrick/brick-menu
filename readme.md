@@ -1,6 +1,6 @@
 # brick-menu
 
-> A [Brick](https://github.com/mozbrick/brick/) custom element starter-kit.
+> A simple [Brick](https://github.com/mozbrick/brick/) vertical menu item.
 
 ## Demo
 
@@ -23,26 +23,14 @@
 3. Start using it:
 
     ```html
-    <brick-menu></brick-menu>
+    <brick-menu>
+      <brick-item selected>Item 1</brick-item>
+      <brick-item>Item 2</brick-item>
+      <brick-item>Item 3</brick-item>
+      <brick-item>Item 4</brick-item>
+    </brick-menu>
     ```
-
-## Options
-
-Attribute     | Options     | Default      | Description
----           | ---         | ---          | ---
-`foo`         | *string*    | `bar`        | An Attribute.
-
-## Methods
-
-Method        | Parameters   | Returns     | Description
----           | ---          | ---         | ---
-`method()`    | None.        | Nothing.    | A method.
-
-## Events
-
-Event         | Description
----           | ---
-`onsomething` | Triggers when something happens.
+  Clicking on one of the <brick-items> sets the clicked item as selected.
 
 ## Development
 
