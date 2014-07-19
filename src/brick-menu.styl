@@ -56,23 +56,21 @@ brick-menu {
 
   // horizontal
   _horizontal() {
-    &[horizontal] {
-      // menu-item/tab
-      flex-direction: row;
-      & > * {
-        flex(1);
-        box-sizing: border-box;
-        display: inline-block;
-        min-width: auto;
-        min-height: auto;
-        vertical-align: middle;
-        // menu-item/tab content
-        & > *:only-child{
-          vertical-align: top;
-          height: 100%;
-          width: 100%;
-          margin: 0 !important;
-        }
+    // menu-item/tab
+    flex-direction: row;
+    & > * {
+      flex(1);
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: auto;
+      min-height: auto;
+      vertical-align: middle;
+      // menu-item/tab content
+      & > *:only-child{
+        vertical-align: top;
+        height: 100%;
+        width: 100%;
+        margin: 0 !important;
       }
     }
   }
