@@ -1,4 +1,4 @@
-/**
+<style>/**
  * example:
  *  & > [horizontal-lt-s/m/l] { mixin() }
  *  & > [horizontal-gt-xs/s/m] { mixin() }
@@ -13,6 +13,9 @@ brick-menu {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   flex-direction: column;
 }
 @media (max-width: 768px) {
@@ -274,3 +277,30 @@ brick-menu[horizontal] > * > *:only-child {
   width: 100%;
   margin: 0 !important;
 }
+</style>
+<style>brick-menu {
+  padding: 0 14px;
+  box-sizing: border-box;
+}
+brick-menu > * {
+  color: #4d4d4d;
+  padding: 14px 0;
+  border-bottom: 1px solid #e7e7e7;
+}
+brick-menu > *:last-child {
+  border-bottom: none;
+}
+brick-menu[horizontal] {
+  padding: 14px 0;
+}
+brick-menu[horizontal] > * {
+  padding: 0 14px;
+  border-bottom: none;
+  border-right: 1px solid #e7e7e7;
+}
+brick-menu[horizontal] > *:last-child {
+  border-right: none;
+}
+</style>
+
+<script src="brick-menu.js"></script>
