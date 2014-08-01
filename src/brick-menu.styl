@@ -7,18 +7,21 @@ $m  = { start:  992px, end: 1200px, name: m  }
 $l  = { start: 1200px,              name: l  }
 
 /**
+ * notice the () around teh attribute. that is because of
+ * :host([attr]) syntax to style the host node.
+ *
  * example:
- *  & > [horizontal-lt-s/m/l] { mixin() }
- *  & > [horizontal-gt-xs/s/m] { mixin() }
- *  & > [horizontal-xs/s/m/l] { mixin() }
- *  & > [horizontal] { mixin() }
+ *  &([horizontal-lt-s/m/l]) { mixin() }
+ *  &([horizontal-gt-xs/s/m]) { mixin() }
+ *  &([horizontal-xs/s/m/l]) { mixin() }
+ *  &([horizontal]) { mixin() }
  * would be created by:
- * responsify("& > ", horizontal, mixin)
+ * responsifyHost("& > ", horizontal, mixin)
  */
-responsify(selector, attr, content) {
+responsifyHost(selector, attr, content) {
   // attr-lt-[s,m,l]
   for $range in $s $m $l {
-    {selector}[{attr}-lt-{$range.name}] {
+    {selector}([{attr}-lt-{$range.name}]) {
       @media (max-width: $range.start) {
         content();
       }
@@ -26,7 +29,7 @@ responsify(selector, attr, content) {
   }
   // attr-gt-[xs,s,m]
   for $range in $xs $s $m {
-    {selector}[{attr}-gt-{$range.name}] {
+    {selector}([{attr}-gt-{$range.name}]) {
       @media (min-width: $range.end) {
         content();
       }
@@ -34,19 +37,19 @@ responsify(selector, attr, content) {
   }
   // attr-[xs,s,m,l]
   for $range in $s $m {
-    {selector}[{attr}-{$range.name}] {
+    {selector}([{attr}-{$range.name}]) {
       @media (max-width: $range.start) and (min-width: $range.end) {
         content();
       }
     }
   }
   // attr
-  {selector}[{attr}] {
+  {selector}([{attr}]) {
     content();
   }
 }
 
-brick-menu {
+:host {
 
   flexbox();
   width: 100%;
@@ -61,7 +64,7 @@ brick-menu {
   _horizontal() {
     // menu-item/tab
     flex-direction: row;
-    & > * {
+    & ::content > * {
       flex(1);
       box-sizing: border-box;
       display: inline-block;
@@ -70,7 +73,7 @@ brick-menu {
       vertical-align: middle;
       text-align: center;
       // menu-item/tab content
-      & > *:only-child{
+      & ::content > *:only-child{
         vertical-align: top;
         height: 100%;
         width: 100%;
@@ -78,5 +81,5 @@ brick-menu {
       }
     }
   }
-  responsify("&", horizontal, _horizontal);
+  responsifyHost("&", horizontal, _horizontal);
 }
