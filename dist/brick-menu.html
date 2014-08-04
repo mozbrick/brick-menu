@@ -46,12 +46,6 @@
     vertical-align: middle;
     text-align: center;
   }
-  :host([horizontal-lt-s]) ::content > * ::content > *:only-child {
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-    margin: 0 !important;
-  }
 }
 @media (max-width: 992px) {
   :host([horizontal-lt-m]) {
@@ -74,12 +68,6 @@
     min-height: auto;
     vertical-align: middle;
     text-align: center;
-  }
-  :host([horizontal-lt-m]) ::content > * ::content > *:only-child {
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-    margin: 0 !important;
   }
 }
 @media (max-width: 1200px) {
@@ -104,12 +92,6 @@
     vertical-align: middle;
     text-align: center;
   }
-  :host([horizontal-lt-l]) ::content > * ::content > *:only-child {
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-    margin: 0 !important;
-  }
 }
 @media (min-width: 768px) {
   :host([horizontal-gt-xs]) {
@@ -132,12 +114,6 @@
     min-height: auto;
     vertical-align: middle;
     text-align: center;
-  }
-  :host([horizontal-gt-xs]) ::content > * ::content > *:only-child {
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-    margin: 0 !important;
   }
 }
 @media (min-width: 992px) {
@@ -162,12 +138,6 @@
     vertical-align: middle;
     text-align: center;
   }
-  :host([horizontal-gt-s]) ::content > * ::content > *:only-child {
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-    margin: 0 !important;
-  }
 }
 @media (min-width: 1200px) {
   :host([horizontal-gt-m]) {
@@ -190,12 +160,6 @@
     min-height: auto;
     vertical-align: middle;
     text-align: center;
-  }
-  :host([horizontal-gt-m]) ::content > * ::content > *:only-child {
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-    margin: 0 !important;
   }
 }
 @media (max-width: 768px) and (min-width: 992px) {
@@ -220,12 +184,6 @@
     vertical-align: middle;
     text-align: center;
   }
-  :host([horizontal-s]) ::content > * ::content > *:only-child {
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-    margin: 0 !important;
-  }
 }
 @media (max-width: 992px) and (min-width: 1200px) {
   :host([horizontal-m]) {
@@ -249,12 +207,6 @@
     vertical-align: middle;
     text-align: center;
   }
-  :host([horizontal-m]) ::content > * ::content > *:only-child {
-    vertical-align: top;
-    height: 100%;
-    width: 100%;
-    margin: 0 !important;
-  }
 }
 :host([horizontal]) {
   flex-direction: row;
@@ -277,11 +229,28 @@
   vertical-align: middle;
   text-align: center;
 }
-:host([horizontal]) ::content > * ::content > *:only-child {
-  vertical-align: top;
-  height: 100%;
-  width: 100%;
-  margin: 0 !important;
+:host ::content > * {
+  position: relative;
+}
+:host([arrow]:not([horizontal])) ::content > *:after {
+  content: "\f105";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  position: absolute;
+  right: 0;
+}
+:host(:not([horizontal])) ::content > *[arrow]:after {
+  content: "\f105";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  position: absolute;
+  right: 0;
 }
 </style>
   <style>:host {
