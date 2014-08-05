@@ -80,22 +80,17 @@ responsifyHost(selector, attr, content) {
     position: relative;
   }
 
-  addArrows() {
-    content: "\f105";
-    font-family: FontAwesome;
-    font-weight: normal;
-    font-style: normal;
+  prepareArrows() {
     display: inline-block;
-    text-decoration: inherit;
     position: absolute;
     right: 0;
   }
 
   // handling arrows
   &([arrow]:not([horizontal])) ::content > *:after {
-    addArrows();
+    prepareArrows();
   }
   &(:not([horizontal])) ::content > *[arrow]:after {
-    addArrows();
+    prepareArrows();
   }
 }

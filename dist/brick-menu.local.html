@@ -233,22 +233,12 @@
   position: relative;
 }
 :host([arrow]:not([horizontal])) ::content > *:after {
-  content: "\f105";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
   display: inline-block;
-  text-decoration: inherit;
   position: absolute;
   right: 0;
 }
 :host(:not([horizontal])) ::content > *[arrow]:after {
-  content: "\f105";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
   display: inline-block;
-  text-decoration: inherit;
   position: absolute;
   right: 0;
 }
@@ -275,6 +265,14 @@
 }
 :host([horizontal]) ::content > *:last-child {
   border-right: none;
+}
+:host([arrow]:not([horizontal])) ::content > *:after {
+  content: "\f105";
+  font-family: FontAwesome;
+}
+:host(:not([horizontal])) ::content > *[arrow]:after {
+  content: "\f105";
+  font-family: FontAwesome;
 }
 </style>
   <content></content>
