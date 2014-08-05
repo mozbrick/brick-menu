@@ -26,4 +26,16 @@
     }
   }
 
+  addArrows() {
+    content: "\f105";
+    font-family: FontAwesome;
+  }
+
+  // handling arrows
+  &([arrow]:not([horizontal])) ::content > *:after {
+    addArrows();
+  }
+  &(:not([horizontal])) ::content > *[arrow]:after {
+    addArrows();
+  }
 }
