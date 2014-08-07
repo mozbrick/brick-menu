@@ -9,16 +9,37 @@
     <script src="bower_components/platform/platform.js"></script>
 
     <!-- Importing Custom Elemenent -->
-    <link rel="import" href="src/brick-menu.html">
+    <link rel="import" href="dist/brick-menu.local.html">
   </head>
   <body>
 
     <!-- Using Custom Element -->
+    <h3>Arrows everywhere</h3>
+    <brick-menu arrow>
+      <span arrow><i class="fa fa-home fa-fw"></i> Home</span>
+      <span><i class="fa fa-book fa-fw"></i> Library</span>
+      <span arrow><i class="fa fa-pencil fa-fw"></i> Applications</span>
+      <span><i class="fa fa-cog fa-fw"></i> Settings</span>
+    </brick-menu>
+
+    <br>
+
+    <h3>Arrows where we want</h3>
     <brick-menu>
-      <brick-menu-item selected>item 1</brick-menu-item>
-      <brick-menu-item >item 2</brick-menu-item>
-      <brick-menu-item >item 3</brick-menu-item>
-      <brick-menu-item >item 4</brick-menu-item>
+      <span arrow><i class="fa fa-home fa-fw"></i> Home</span>
+      <span><i class="fa fa-book fa-fw"></i> Library</span>
+      <span arrow><i class="fa fa-pencil fa-fw"></i> Applications</span>
+      <span><i class="fa fa-cog fa-fw"></i> Settings</span>
+    </brick-menu>
+
+    <br>
+
+    <h3>Horizonthal menu</h3>
+    <brick-menu horizontal>
+      <span arrow><i class="fa fa-home fa-fw"></i> Home</span>
+      <span><i class="fa fa-book fa-fw"></i> Library</span>
+      <span><i class="fa fa-pencil fa-fw"></i> Applications</span>
+      <span><i class="fa fa-cog fa-fw"></i> Settings</span>
     </brick-menu>
 
   </body>
